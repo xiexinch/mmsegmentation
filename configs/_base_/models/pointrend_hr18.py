@@ -59,7 +59,7 @@ model = dict(
                 type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0)),
         dict(
             type='PointHead',
-            in_channels=int([sum([18, 36, 72, 144]) / 2]),
+            in_channels=int(sum([18, 36, 72, 144]) / 2),
             in_index=[0],
             channels=256,
             num_fcs=3,
