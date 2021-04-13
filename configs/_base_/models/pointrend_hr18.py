@@ -43,10 +43,10 @@ model = dict(
         dict(
             type='FPNHead',
             in_channels=[
-                sum([18, 36, 72, 144]),
-                sum([18, 36, 72, 144]),
-                sum([18, 36, 72, 144]),
-                sum([18, 36, 72, 144])
+                int(sum([18, 36, 72, 144])),
+                int(sum([18, 36, 72, 144])),
+                int(sum([18, 36, 72, 144])),
+                int(sum([18, 36, 72, 144]))
             ],
             in_index=[0, 1, 2, 3],
             feature_strides=[4, 8, 16, 32],
