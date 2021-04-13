@@ -50,7 +50,7 @@ model = dict(
             ],
             in_index=[0, 1, 2, 3],
             feature_strides=[4, 8, 16, 32],
-            channels=sum([18, 36, 72, 144]) / 2,
+            channels=int(sum([18, 36, 72, 144]) / 2),
             dropout_ratio=-1,
             num_classes=19,
             norm_cfg=norm_cfg,
@@ -59,7 +59,7 @@ model = dict(
                 type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0)),
         dict(
             type='PointHead',
-            in_channels=[sum([18, 36, 72, 144]) / 2],
+            in_channels=int([sum([18, 36, 72, 144]) / 2]),
             in_index=[0],
             channels=256,
             num_fcs=3,
